@@ -1,0 +1,37 @@
+﻿<mah:MetroWindow 
+    x:Class="WPF_MC.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:HamburgerMenuViews="clr-namespace:WPF_MC.UserControls.HamburgerMenuViews"
+    xmlns:local="clr-namespace:WPF_MC"
+    xmlns:uc="clr-namespace:WPF_MC.UserControls"
+    xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    mc:Ignorable="d"
+    Title="MainWindow" 
+    Height="800" 
+    Width="1360"
+    >
+    <!--TODO: Step 8: Add right window command where the launch the new window from-->
+    <!--GOTO: MainWindow.xaml.cs to write ChangeAppStyleButtonClick implementation-->
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Click="ChangeAppStyleButtonClick">
+                <TextBlock Margin="4 0 0 0" 
+                            VerticalAlignment="Center" 
+                            Text="App Style" 
+                />
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <Grid>
+        <Frame Name="MainWindowFrame" 
+               Loaded="MainWindowFrame_Loaded"
+               NavigationUIVisibility="Hidden"
+               Width="{Binding ElementName=MainWindowMetro, Path=ActualWidth}"
+               Height="{Binding ElementName=MainWindowMetro, Path=ActualHeight}"
+               Visibility="Visible"
+        />
+    </Grid>
+</mah:MetroWindow>
